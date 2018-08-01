@@ -1,4 +1,4 @@
-The other repositories Í created today:
+The other repositories I created today:
 
 [hello-world](https://github.com/rdgrv/hello-world)
 [patchwork](https://github.com/rdgrv/patchwork)
