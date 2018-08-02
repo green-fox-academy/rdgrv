@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Cuboid {
   public static void main(String[] args) {
     double a = 6;
@@ -6,13 +8,14 @@ public class Cuboid {
 
     double surfaceArea = 2 * (a * b + b * c + a * c);
     double volume = a * b * c;
+/*
+I know this won't solve our problem since it won't work with decimal numbers,
+but it was exciting to find out how to turn a double into an integer
+*/
+    int surfaceAreaInt = (int) surfaceArea;
+    int volumeInt = (int) volume;
 
-    System.out.println("Surface Area: " + surfaceArea);
-    System.out.println("Volume: " + volume);
+    System.out.println("Surface Area: " + surfaceAreaInt);
+    System.out.println("Volume: " + volumeInt);
   }
-  // Write a program that stores 3 sides of a cuboid as variables (doubles)
-// The program should write the surface area and volume of the cuboid like:
-//
-// Surface Area: 600
-// Volume: 1000
 }
