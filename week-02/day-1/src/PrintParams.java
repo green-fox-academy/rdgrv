@@ -1,5 +1,15 @@
 public class PrintParams {
+  public static void main(String[] args) {
+    printParams("hello", "goodbye", "yay", "nay");
 
+  }
+
+  public static void printParams(String... a) {
+
+    for (int i = 0; i < a.length; i++) {
+      System.out.println(a[i]);
+    }
+  }
 }
 
 //  Create the usual class wrapper
