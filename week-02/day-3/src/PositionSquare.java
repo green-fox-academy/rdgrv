@@ -9,12 +9,12 @@ public class PositionSquare {
   public static void mainDraw(Graphics graphics){
 
     for (int i = 0; i < 3; i++) {
-      squareDrawing(graphics, i * 50, i * 50);
+      squareDrawing(graphics, i * 50);
     }
   }
 
-  public static void squareDrawing (Graphics graphics, int x, int y) {
-    graphics.drawRect(x, y, 50, 50);
+  public static void squareDrawing (Graphics graphics, int x) {
+    graphics.drawRect(x, x, 50, 50);
   }
 
   //    Don't touch the code below

@@ -2,22 +2,28 @@ import javax.swing.*;
 
 import java.awt.*;
 
-import static java.awt.Window.getOwnerlessWindows;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class CenterBoxFunction {
+public class PurpleSteps3D {
+  public static void mainDraw(Graphics graphics) {
 
-  public static void mainDraw(Graphics graphics){
-    for (int i = 0; i < 3; i++) {
-      squareDraw(graphics, i*40);
+    int size = 10;
+    int x = 10;
+    for (int i = 1; i < 7; i++) {
+      size = i * 10;
+      x += size-10;
+      squareDrawing(graphics, x, size);
     }
   }
 
-  public static void squareDraw(Graphics graphics, int x) {
-    graphics.drawRect(WIDTH/2-x/2, HEIGHT/2-x/2, x, x);
+  public static void squareDrawing (Graphics graphics, int x, int size) {
+    graphics.setColor(new Color(177,69,243));
+    graphics.fillRect(x, x, size, size);
+    graphics.setColor(Color.BLACK);
+    graphics.drawRect(x, x, size, size);
   }
 
-  //    Don't touch the code below
+  // Don't touch the code below
   static int WIDTH = 320;
   static int HEIGHT = 343;
 
@@ -29,13 +35,12 @@ public class CenterBoxFunction {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-  static class ImagePanel extends JPanel{
+
+  static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }
