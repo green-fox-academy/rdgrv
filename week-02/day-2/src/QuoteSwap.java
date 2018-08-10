@@ -3,19 +3,14 @@ import java.util.*;
 public class QuoteSwap {
   public static void main(String... args) {
     ArrayList<String> list = new ArrayList<String>(Arrays.asList("What", "I", "do", "create,", "I", "cannot", "not", "understand."));
+    quoteSwap(list);
 
-    System.out.println(quoteSwap(list));
-
+    for (int i = 0; i < list.size(); i++) {
+      System.out.print(list.get(i) + " ");
+    }
   }
 
-  public static List quoteSwap(ArrayList<String> list) {
-    list.add(2, list.get(5));
-    list.add(6, list.get(3));
-    list.remove(3);
-    list.remove(6);
-    String string = "";
-
-
-    return list;
+  public static void quoteSwap(ArrayList list) {
+    Collections.swap(list, 2, 5);
   }
 }
