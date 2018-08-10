@@ -17,7 +17,7 @@ public class CheckerBoard {
             graphics.setColor(Color.BLACK);
             graphics.fillRect(x, y, size, size);
           } else {
-              graphics.setColor(Color.WHITE);
+            graphics.setColor(Color.WHITE);
             graphics.fillRect(x, y, size, size);
           }
           x = x + WIDTH / 8;
