@@ -14,6 +14,7 @@ public class Logs {
     } catch (Exception e) {
     }
     System.out.println(ipAddress(lines));
+    System.out.println(getPostRatio(lines));
   }
 
 
@@ -28,6 +29,24 @@ public class Logs {
       }
     }
     return uniqueList;
+  }
+
+  public static double getPostRatio(ArrayList<String> lines) {
+    ArrayList<String> getPostRatio = new ArrayList<>();
+    double get = 0;
+    double post = 0;
+    double ratio;
+
+    for (int i = 0; i < lines.size(); i++) {
+      String getPost = lines.get(i).split("   ")[2].split(" ")[0];
+      if (getPost.equals("GET")) {
+        get++;
+      } else {
+        post++;
+      }
+    }
+    ratio = get / post;
+    return ratio;
   }
 }
 
