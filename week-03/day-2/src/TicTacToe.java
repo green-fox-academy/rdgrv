@@ -1,6 +1,7 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TicTacToe {
@@ -15,16 +16,31 @@ public class TicTacToe {
   }
 
   public static String ttt(String filename) {
+    ArrayList<String> rows = new ArrayList<>();
+    String result = "";
     try {
       Path path = Paths.get(filename);
-      List<String> lines = Files.readAllLines(path);
+      rows.addAll(Files.readAllLines(path));
     } catch (Exception e) {
     }
+
+    for (int i = 0; i < 3; i++) {
+      if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1)).equals(Character.toString(rows.get(i).charAt(2)).equals("O"))) ||
+          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i)).equals(Character.toString(rows.get(2).charAt(i)).equals("O"))) ||
+          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(2)).equals("O"))) ||
+          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(0)).equals("O")))) {
+        result = "O";
+        break;
+      } else if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1)).equals(Character.toString(rows.get(i).charAt(2)).equals("X"))) ||
+          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i)).equals(Character.toString(rows.get(2).charAt(i)).equals("X"))) ||
+          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(2)).equals("X"))) ||
+          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(0)).equals("X")))) {
+        result = "X";
+        break;
+      } else {
+        result = "draw";
+      }
+    }
+    return result;
   }
-
-  // Write a function that takes a filename as string,
-  // open and read it. The file data represents a tic-tac-toe
-  // game result. Return 'X'/'O'/'draw' based on which player
-  // has winning situation.
-
 }
