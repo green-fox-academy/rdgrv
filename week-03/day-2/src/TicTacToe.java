@@ -2,7 +2,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 
 public class TicTacToe {
 
@@ -25,16 +24,16 @@ public class TicTacToe {
     }
 
     for (int i = 0; i < 3; i++) {
-      if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1)).equals(Character.toString(rows.get(i).charAt(2)).equals("O"))) ||
-          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i)).equals(Character.toString(rows.get(2).charAt(i)).equals("O"))) ||
-          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(2)).equals("O"))) ||
-          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(0)).equals("O")))) {
+      if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1))) && Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("O") ||
+          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i))) && Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(2).charAt(i))) && Character.toString(rows.get(i).charAt(0)).equals("O") ||
+          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(2).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("O") ||
+          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(2).charAt(0))) && Character.toString(rows.get(i).charAt(0)).equals("O")) {
         result = "O";
         break;
-      } else if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1)).equals(Character.toString(rows.get(i).charAt(2)).equals("X"))) ||
-          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i)).equals(Character.toString(rows.get(2).charAt(i)).equals("X"))) ||
-          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(2)).equals("X"))) ||
-          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1)).equals(Character.toString(rows.get(2).charAt(0)).equals("X")))) {
+      } else if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1))) && Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("X") ||
+          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i))) && Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(2).charAt(i))) && Character.toString(rows.get(i).charAt(0)).equals("X") ||
+          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(2).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("X") ||
+          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(2).charAt(0))) && Character.toString(rows.get(i).charAt(0)).equals("X")) {
         result = "X";
         break;
       } else {
