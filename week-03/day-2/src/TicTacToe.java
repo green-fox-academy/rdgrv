@@ -23,17 +23,11 @@ public class TicTacToe {
     } catch (Exception e) {
     }
 
-    for (int i = 0; i < 3; i++) {
-      if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1))) && Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("O") ||
-          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i))) && Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(2).charAt(i))) && Character.toString(rows.get(i).charAt(0)).equals("O") ||
-          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(2).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("O") ||
-          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(2).charAt(0))) && Character.toString(rows.get(i).charAt(0)).equals("O")) {
+    for (int i = 0; i < rows.size(); i++) {
+      if (xOrO(rows, i, "O")) {
         result = "O";
         break;
-      } else if (Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(1))) && Character.toString(rows.get(i).charAt(0)).equals(Character.toString(rows.get(i).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("X") ||
-          Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(1).charAt(i))) && Character.toString(rows.get(0).charAt(i)).equals(Character.toString(rows.get(2).charAt(i))) && Character.toString(rows.get(i).charAt(0)).equals("X") ||
-          Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(0)).equals(Character.toString(rows.get(2).charAt(2))) && Character.toString(rows.get(i).charAt(0)).equals("X") ||
-          Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(1).charAt(1))) && Character.toString(rows.get(0).charAt(2)).equals(Character.toString(rows.get(2).charAt(0))) && Character.toString(rows.get(i).charAt(0)).equals("X")) {
+      } else if (xOrO(rows, i, "X")) {
         result = "X";
         break;
       } else {
@@ -41,5 +35,16 @@ public class TicTacToe {
       }
     }
     return result;
+  }
+
+  public static String getChar(ArrayList<String> rows, int row, int character) {
+    return Character.toString(rows.get(row).charAt(character));
+  }
+
+  public static boolean xOrO(ArrayList<String> rows, int i, String a) {
+    return getChar(rows, i, 0).equals(getChar(rows, i, 1)) && getChar(rows, i, 0).equals(getChar(rows, i, 2)) && getChar(rows, i, 0).equals(a) ||
+        getChar(rows, 0, i).equals(getChar(rows, 1, i)) && getChar(rows, 0, i).equals(getChar(rows, 2, i)) && getChar(rows, 0, i).equals(a) ||
+        getChar(rows, 0, 0).equals(getChar(rows, 1, 1)) && getChar(rows, 0, 0).equals(getChar(rows, 2, 2)) && getChar(rows, 0, 0).equals(a) ||
+        getChar(rows, 0, 2).equals(getChar(rows, 1, 1)) && getChar(rows, 0, 2).equals(getChar(rows, 2, 0)) && getChar(rows, 0, 2).equals(a);
   }
 }
