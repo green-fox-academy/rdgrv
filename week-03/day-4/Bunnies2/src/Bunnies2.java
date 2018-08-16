@@ -1,6 +1,6 @@
 public class Bunnies2 {
   public static void main(String[] args) {
-    System.out.println(raisedFeet(5));
+    System.out.println(raisedFeet(3));
   }
 
   public static int raisedFeet (int n) {
