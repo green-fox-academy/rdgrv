@@ -1,16 +1,18 @@
 public class Main {
-  public static void main(String[] args) {
 
-    String string = "xaaax I'm so happxxx";
-    int stringLength = string.length();
-    System.out.println(characterChanger(string, stringLength));
+  public static void main(String[] args) {
+    String string = "xaaax I am so happxxxxxxxxx";
+    System.out.println(recString(string));
   }
 
-  public static String characterChanger (String a, int b) {
-    if (b == 0) {
-      return a.replace("x", "y");
+
+  public static String recString(String a) {
+    if (a.length() == 0) {
+      return a;
+    } else if (a.startsWith("x")) {
+      return "y" + recString(a.substring(1));
     } else {
-      return characterChanger(a, b - 1);
+      return a.charAt(0) + recString(a.substring(1));
     }
   }
 }
