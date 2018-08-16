@@ -4,8 +4,8 @@ public class Power {
   }
 
   public static long power (long n, long p) {
-    if (p == 1) {
-      return n;
+    if (p == 0) {
+      return 1;
     } else {
       return n * power(n, p - 1);
     }
