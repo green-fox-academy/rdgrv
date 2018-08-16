@@ -7,10 +7,10 @@ public class Main {
   }
 
   public static String characterChanger (String a, int b) {
-    if (!Character.toString(a.charAt(b - 1)).equals("x")) {
-      return Character.toString(a.charAt(b - 1));
-    } else {
+    if (b == 0) {
       return a.replace("x", "y");
+    } else {
+      return characterChanger(a, b - 1);
     }
   }
 }
