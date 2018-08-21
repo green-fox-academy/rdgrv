@@ -8,22 +8,21 @@ public class Student extends Person{
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + "who skipped " + skippedDays + " days from the course already.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
   }
 
   public int skipDays(int numberOfDays) {
-    skippedDays += numberOfDays;
-    return skippedDays;
+    return skippedDays += numberOfDays;
   }
 
   public Student(String name, int age, String gender, String previousOrganization) {
+    super(name, age, gender);
+    this.previousOrganization = previousOrganization;
     skippedDays = 0;
   }
 
   public Student () {
-    name = "Jane Doe";
-    age = 30;
-    gender = "female";
+    super("Jane Doe", 30, "female");
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
