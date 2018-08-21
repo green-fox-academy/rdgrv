@@ -1,9 +1,22 @@
-public class Tree {
-  String color;
-  int waterCapacity = 70;
+public class Tree extends Plant {
 
-  public Tree(String color){
-    this.color = color;
+  public Tree(String color) {
+    super(color);
+  }
+
+  public String waterTree(int water) {
+    if (waterLevel < 10) {
+      waterLevel += water * 0.40;
+    }
+    return treeInfo();
+  }
+
+  public String treeInfo() {
+    if (waterLevel < 10) {
+      return "The " + color + " Tree needs water";
+    } else {
+      return "The " + color + " Tree doesn't need water";
+    }
   }
 }
 

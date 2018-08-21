@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
   public static void main(String[] args) {
     Flower yellow = new Flower("yellow");
@@ -5,6 +7,39 @@ public class Main {
     Tree purple = new Tree("purple");
     Tree orange = new Tree("orange");
 
+    ArrayList<Plant> garden = new ArrayList<>();
+    garden.add(yellow);
+    garden.add(blue);
+    garden.add(purple);
+    garden.add(orange);
+
+    for (int i = 0; i < garden.size(); i++) {
+      if (garden.get(i) instanceof Flower) {
+        System.out.println(((Flower) garden.get(i)).flowerInfo());
+      } else {
+        System.out.println(((Tree) garden.get(i)).treeInfo());
+      }
+    }
+
+    for (int i = 0; i < garden.size(); i++) {
+      int allWater = 40;
+      int waterPerPlant = allWater / garden.size();
+      if (garden.get(i) instanceof Flower) {
+        System.out.println(((Flower) garden.get(i)).waterFlower(waterPerPlant));
+      } else {
+        System.out.println(((Tree) garden.get(i)).waterTree(waterPerPlant));
+      }
+    }
+
+    for (int i = 0; i < garden.size(); i++) {
+      int allWater = 70;
+      int waterPerPlant = allWater / garden.size();
+      if (garden.get(i) instanceof Flower) {
+        System.out.println(((Flower) garden.get(i)).waterFlower(waterPerPlant));
+      } else {
+        System.out.println(((Tree) garden.get(i)).waterTree(waterPerPlant));
+      }
+    }
   }
 }
 

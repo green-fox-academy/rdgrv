@@ -1,9 +1,22 @@
-public class Flower {
-  String color;
-  int waterCapacity = 40;
+public class Flower extends Plant {
 
-  public Flower(String color){
-    this.color = color;
+  public Flower(String color) {
+    super(color);
+  }
+
+  public String waterFlower(int water) {
+    if (waterLevel < 5) {
+      waterLevel += water * 0.75;
+    }
+    return flowerInfo();
+  }
+
+  public String flowerInfo() {
+    if (waterLevel < 5) {
+      return "The " + color + " Flower needs water";
+    } else {
+      return "The " + color + " Flower doesn't need water";
+    }
   }
 }
 
