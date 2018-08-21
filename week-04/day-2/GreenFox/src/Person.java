@@ -8,10 +8,14 @@ public class Person {
   }
 
   public void getGoal() {
-    System.out.println("My goal is: Live for the moment!");
+    String goal = "Live for the moment";
+    System.out.println("My goal is: " + goal +"!");
   }
 
   public Person(String name, int age, String gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
   }
 
   public Person() {
