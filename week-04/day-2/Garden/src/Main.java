@@ -16,15 +16,15 @@ public class Main {
     int allWater;
 
     for (Plant plant : garden) {
-      System.out.println(plant.info());
+      System.out.println(plant);
 
       allWater = 40;
       plant.water(allWater / garden.size());
-      System.out.println(plant.info());
+      System.out.println(plant);
 
       allWater = 70;
       plant.water(allWater / garden.size());
-      System.out.println(plant.info());
+      System.out.println(plant);
     }
   }
 }
