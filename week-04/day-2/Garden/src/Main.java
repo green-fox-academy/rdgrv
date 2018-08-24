@@ -17,11 +17,19 @@ public class Main {
 
     for (Plant plant : garden) {
       System.out.println(plant);
+    }
 
+    System.out.println("\nWatering with 40");
+
+    for (Plant plant : garden) {
       allWater = 40;
       plant.water(allWater / garden.size());
       System.out.println(plant);
+    }
 
+    System.out.println("\nWatering with 70");
+
+    for (Plant plant : garden) {
       allWater = 70;
       plant.water(allWater / garden.size());
       System.out.println(plant);
