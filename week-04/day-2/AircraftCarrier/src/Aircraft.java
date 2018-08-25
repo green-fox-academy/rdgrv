@@ -21,7 +21,7 @@ public class Aircraft {
   public int refill(int ammoAdded) {
     int neededAmmo = maxAmmo - currentAmmo;
 
-    if (neededAmmo == 0) {
+    if (neededAmmo == 0 || ammoAdded == 0) {
       return ammoAdded;
     } else if (neededAmmo <= ammoAdded) {
       return ammoAdded - neededAmmo;
@@ -37,5 +37,9 @@ public class Aircraft {
 
   public String getStatus() {
     return "Type " + type + ", Ammo: " + currentAmmo + ", Base Damage: " + baseDamage + ", All Damage: " + baseDamage * maxAmmo;
+  }
+
+  public boolean isPriority() {
+    return isPriority;
   }
 }
