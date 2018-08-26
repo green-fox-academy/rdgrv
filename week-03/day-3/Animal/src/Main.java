@@ -10,5 +10,15 @@ public class Main {
     duck.play();
     System.out.println(duck.hunger);
     System.out.println(duck.thirst);
+
+    Farm farm = new Farm();
+    farm.breed(duck);
+    farm.breed(duck);
+    farm.breed(duck);
+    farm.breed(duck);
+    farm.breed(duck);
+    farm.breed(duck);
+    farm.breed(duck);
+    farm.slaughter();
   }
 }
