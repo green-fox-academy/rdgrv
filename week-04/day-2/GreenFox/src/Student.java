@@ -1,10 +1,10 @@
-public class Student extends Person{
+public class Student extends Person implements Cloneable {
   String previousOrganization;
   int skippedDays;
 
   public void getGoal() {
     String goal = "Be a junior software developer";
-    System.out.println("My goal is: " + goal +".");
+    System.out.println("My goal is: " + goal + ".");
   }
 
   public void introduce() {
@@ -21,9 +21,14 @@ public class Student extends Person{
     skippedDays = 0;
   }
 
-  public Student () {
+  public Student() {
     super("Jane Doe", 30, "female");
     previousOrganization = "The School of Life";
     skippedDays = 0;
+  }
+
+  public Student clone() {
+    Student name = new Student(this.name, this.age, this.gender, this.previousOrganization);
+    return name;
   }
 }
