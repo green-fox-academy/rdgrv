@@ -30,4 +30,11 @@ public class PirateTest {
     assertEquals("Arghh, I'ma Pirate. How d'ya d'ink its goin?", pirate.howsItGoingMate());
   }
 
+  @Test
+  public void howsItGoingDeadPirate() {
+    Pirate pirate = new Pirate();
+    pirate.die();
+    assertEquals("He's dead.", pirate.howsItGoingMate());
+  }
+
 }

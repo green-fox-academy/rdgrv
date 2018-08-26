@@ -1,26 +1,32 @@
 public class Pirate {
   int drumCapacity;
+  boolean dead;
+  int punchStrength;
 
   public Pirate() {
     drumCapacity = 5;
+    dead = false;
+    punchStrength = (int) (Math.random() * 3);
   }
 
   public int drinkSomeRum() {
-    if (drumCapacity != 1) {
+    if (drumCapacity > 1) {
       drumCapacity--;
     }
     return drumCapacity;
   }
 
   public int drinkSomeRum(int rum) {
-    if (drumCapacity != 1 && rum < drumCapacity) {
-      drumCapacity-= rum;
+    if (drumCapacity > 1 && rum < drumCapacity) {
+      drumCapacity -= rum;
     }
     return drumCapacity;
   }
 
   public String howsItGoingMate() {
-    if (drumCapacity != 1) {
+    if (dead) {
+      return "He's dead.";
+    } else if (drumCapacity != 1) {
       return "Pour me anudder!";
     } else {
       return "Arghh, I'ma Pirate. How d'ya d'ink its goin?";
@@ -28,15 +34,34 @@ public class Pirate {
   }
 
   public String sleepItOff() {
-    return "*passes out and sleeps it off*";
+    if (dead) {
+      return "He's dead.";
+    } else {
+      return "*passes out and sleeps it off*";
+    }
+  }
+
+  public void die() {
+    dead = true;
+    drumCapacity = 0;
+  }
+
+  public String brawl(Pirate otherPirate) {
+    if (punchStrength > otherPirate.punchStrength) {
+      otherPirate.die();
+      return otherPirate + "lost.";
+    } else if (punchStrength < otherPirate.punchStrength) {
+      die();
+      return "I lost.";
+    } else {
+      sleepItOff();
+      otherPirate.sleepItOff();
+      return "Both pirates passed out.";
+    }
   }
 }
 
 
-//    die() - this kills off the pirate, in which case, drinkSomeRum, etc. just result in he's dead.
-//    brawl(x) - where pirate fights another pirate (if that other pirate is alive) and there's a 1/3 chance, 1 dies, the other dies or they both pass out.
-//    And... if you get that far...
-//
 //    Add a parrot.
 //
 //    The Pirate Ship
