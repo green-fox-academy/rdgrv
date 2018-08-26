@@ -1,10 +1,14 @@
-package animals;
+package main.java.animals;
 
 public abstract class Animal {
   String name;
   int age;
   String gender;
   boolean cuteness;
+
+  public Animal(String name) {
+    this.name = name;
+  }
 
   public Animal(String name, int age, String gender, boolean cuteness) {
     this.name = name;
