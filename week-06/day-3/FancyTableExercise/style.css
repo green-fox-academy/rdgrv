@@ -26,12 +26,12 @@ td {
   padding: 20px;
 }
 
-tr:nth-child(2n+1) {
+tr:nth-child(odd) {
   background-color: #EBEBEB;
   color: #696E87;   
 }
 
-tr:nth-child(2n+2) {
+tr:nth-child(even) {
   background-color: #FFFFFF;
   color: #696E87;   
 }
