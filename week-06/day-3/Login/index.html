@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Login Form
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>ACCOUNT LOGIN</h1>
+    <form action="/my-handling-form-page" method="post">
+      <div>
+        <label for="name">USERNAME</label><br>
+        <input type="text" id="name" name="user_name">
+      </div>
+      <div>
+        <label for="password">PASSWORD</label>
+        <img src="img/eye.jpg" onmousedown="password.type='text'" onmouseup="password.type='password'" onmousemove="password.type='password'"><br>
+        <input type="PASSWORD" id="password" name="password">
+        </div>
+      <a href="/some-link">Forgot password?</a> 
+      <div class="button">
+        <button type="button">Login</button>
+      </div>
+    </form>
+  </body>
+</html>
