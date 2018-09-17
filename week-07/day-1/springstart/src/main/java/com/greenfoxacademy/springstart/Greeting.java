@@ -9,8 +9,8 @@ public class Greeting {
     content = "Hello, World!";
   }
 
-  public Greeting (String name) {
-    id = 1;
+  public Greeting (long id, String name) {
+    this.id = id;
     content = "Hello, " + name;
   }
 
