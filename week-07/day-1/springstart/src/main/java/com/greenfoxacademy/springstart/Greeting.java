@@ -9,6 +9,11 @@ public class Greeting {
     content = "Hello, World!";
   }
 
+  public Greeting (String name) {
+    id = 1;
+    content = "Hello, " + name;
+  }
+
   public long getId() {
     return id;
   }
