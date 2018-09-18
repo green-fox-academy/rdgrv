@@ -15,6 +15,7 @@
         <th>Balance</th>
         <th>Animal type</th>
         <th>Royal status</th>
+        <th>Loyalty</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
         <td th:text="${bankaccount.getBalanceValue()} + ' ' + ${bankaccount.getBalanceCurrency()}"></td>
         <td th:text="${bankaccount.getAnimalType()}"></td>
         <td th:text="${bankaccount.isKing()} ? 'King' : 'Non-royal'"></td>
+        <td th:text="${bankaccount.isEnemy()} ? 'Bad guy' : 'Good guy'"></td>
     </tr>
     </tbody>
 </table>
