@@ -10,17 +10,17 @@
 <table>
     <thead>
     <tr>
+        <th>Id</th>
         <th>Name</th>
         <th>Balance</th>
-        <th>Currency</th>
         <th>Animal type</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="bankaccount : ${bankaccountlist}">
+        <td th:text="${bankaccountStat.index}"></td>
         <td th:text="${bankaccount.getName()}"></td>
-        <td th:text="${bankaccount.getBalanceValue()}"></td>
-        <td th:text="${bankaccount.getBalanceCurrency()}"></td>
+        <td th:text="${bankaccount.getBalanceValue()} + ' ' + ${bankaccount.getBalanceCurrency()}"></td>
         <td th:text="${bankaccount.getAnimalType()}"></td>
     </tr>
     </tbody>
