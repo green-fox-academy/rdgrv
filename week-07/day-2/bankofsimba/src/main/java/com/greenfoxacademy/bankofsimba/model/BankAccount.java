@@ -22,7 +22,7 @@ public class BankAccount {
     return balance.getValue();
   }
 
-  public String getBalancCurrency() {
+  public String getBalanceCurrency() {
     return balance.getCurrency();
   }
 

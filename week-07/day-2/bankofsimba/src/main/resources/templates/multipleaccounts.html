@@ -2,10 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thymeleaf Exercise 1</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
-    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
 </head>
 <body>
-<p th:text="'Name: ' + ${bankaccount.getName()} + ' Balance: ' + ${#numbers.formatDecimal(bankaccount.getBalanceValue(), 0, 2, 'POINT')} + ' ' + ${bankaccount.getBalancCurrency()} + ' Animal type: ' + ${bankaccount.getAnimalType()}"/>
+<h1>Bank accounts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Currency</th>
+        <th>Animal type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="bankaccount : ${bankaccountlist}">
+        <td th:text="${bankaccount.name}"></td>
+        <td th:text="${bankaccount.getBalanceValue()}"></td>
+        <td th:text="${bankaccount.getBalanceCurrency()}"></td>
+        <td th:text="${bankaccount.animalType}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
