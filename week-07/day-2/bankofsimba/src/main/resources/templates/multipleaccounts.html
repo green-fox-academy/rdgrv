@@ -18,10 +18,10 @@
     </thead>
     <tbody>
     <tr th:each="bankaccount : ${bankaccountlist}">
-        <td th:text="${bankaccount.name}"></td>
+        <td th:text="${bankaccount.getName()}"></td>
         <td th:text="${bankaccount.getBalanceValue()}"></td>
         <td th:text="${bankaccount.getBalanceCurrency()}"></td>
-        <td th:text="${bankaccount.animalType}"></td>
+        <td th:text="${bankaccount.getAnimalType()}"></td>
     </tr>
     </tbody>
 </table>
