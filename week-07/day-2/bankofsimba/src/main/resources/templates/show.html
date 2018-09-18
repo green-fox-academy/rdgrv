@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise 1</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<p th:text="'Name: ' + ${bankaccount.getName()} + ' Balance: ' + ${bankaccount.getBalance()} + ' Animal type: ' + ${bankaccount.getAnimalType()}"/>
+</body>
+</html>
