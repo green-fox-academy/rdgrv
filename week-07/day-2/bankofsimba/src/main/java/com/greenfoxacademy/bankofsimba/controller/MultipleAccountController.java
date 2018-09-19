@@ -12,7 +12,7 @@ public class MultipleAccountController {
   public String multipleAccounts(Model model) {
     BankAccountList bankAccountList = new BankAccountList();
     bankAccountList.add(new BankAccount("Simba", new Balance(2000, "zebra"), "lion", true, false));
-    bankAccountList.add(new BankAccount("Scar", new Balance(1500, "hyena"), "lion", false, true));
+    bankAccountList.add(new BankAccount("Scar", new Balance(1500, "hyena"), "lion", true, true));
     bankAccountList.add(new BankAccount("Ed", new Balance(500, "bone"), "hyena", false, true));
     bankAccountList.add(new BankAccount("Zazu", new Balance(300, "worm"), " red-billed hornbill", false, false));
     bankAccountList.add(new BankAccount("Timon/Pumba", new Balance(4000, "insect"), "meerkat/warthog", false, false));

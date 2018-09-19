@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise 1</title>
+    <title>Bank of Simba</title>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
 </head>
@@ -25,7 +25,7 @@
         <td th:text="${bankaccount.getBalanceValue()} + ' ' + ${bankaccount.getBalanceCurrency()}"></td>
         <td th:text="${bankaccount.getAnimalType()}"></td>
         <td th:text="${bankaccount.isKing()} ? 'King' : 'Non-royal'"></td>
-        <td th:text="${bankaccount.isEnemy()} ? 'Bad guy' : 'Good guy'"></td>
+        <td th:text="${bankaccount.getStatus()}"></td>
     </tr>
     </tbody>
 </table>

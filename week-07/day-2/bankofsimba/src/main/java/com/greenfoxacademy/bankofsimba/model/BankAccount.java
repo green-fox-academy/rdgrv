@@ -41,4 +41,14 @@ public class BankAccount {
   public boolean isEnemy() {
     return isEnemy;
   }
+
+  public String getStatus() {
+    if (isKing() && !isEnemy())
+      return "Obviously loyal to himself";
+    else if (isKing() && isEnemy())
+      return "The greatest enemy of the kingdom";
+    else if (!isKing() && !isEnemy())
+      return "Good servant";
+    else return "Evil minion";
+  }
 }
