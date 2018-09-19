@@ -1,5 +1,6 @@
 package com.greenfoxacademy.diworkshop;
 
+import com.greenfoxacademy.diworkshop.model.BlueColor;
 import com.greenfoxacademy.diworkshop.service.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +12,9 @@ public class DiworkshopApplication implements CommandLineRunner {
   @Autowired
   Printer printer;
 
+  @Autowired
+  BlueColor blueColor;
+
   public static void main(String[] args) {
     SpringApplication.run(DiworkshopApplication.class, args);
   }
@@ -20,5 +24,7 @@ public class DiworkshopApplication implements CommandLineRunner {
     System.out.println("SOME SPRING INFO");
     printer.log("hello");
     System.out.println("SOME SPRING INFO");
+    System.out.println();
+    blueColor.printColor();
   }
 }
