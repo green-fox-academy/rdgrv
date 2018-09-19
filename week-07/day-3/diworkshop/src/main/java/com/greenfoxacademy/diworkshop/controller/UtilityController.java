@@ -15,7 +15,6 @@ public class UtilityController {
 
   @RequestMapping("/useful")
   public String mainPage() {
-
     return "useful";
   }
 
