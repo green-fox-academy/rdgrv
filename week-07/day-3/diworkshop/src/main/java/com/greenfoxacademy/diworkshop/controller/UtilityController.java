@@ -33,4 +33,13 @@ public class UtilityController {
     model.addAttribute("invalid", "red");
     return "email";
   }
+
+  @RequestMapping("/useful/encoder")
+  public String encoder(Model model, @RequestParam String text, @RequestParam int number) {
+    model.addAttribute("caesar", utilityService.caesar(text, number));
+    model.addAttribute("text", text);
+    model.addAttribute("number", number);
+    return "encoder";
+  }
+
 }
