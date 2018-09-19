@@ -42,4 +42,12 @@ public class UtilityController {
     return "encoder";
   }
 
+  @RequestMapping("/useful/decoder")
+  public String decoder(Model model, @RequestParam String text, @RequestParam int number) {
+    model.addAttribute("caesar", utilityService.caesar(text, -number));
+    model.addAttribute("text", text);
+    model.addAttribute("number", number);
+    return "decoder";
+  }
+
 }
