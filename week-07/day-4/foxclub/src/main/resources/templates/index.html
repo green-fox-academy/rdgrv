@@ -11,7 +11,7 @@
 
 </ul>
 <img src="greenfox.png">
-<p th:text="'This is Mr Fox. Currently living on pizza and lemonade. He knows 2 tricks.'"/>
+<p th:text="'This is ' + ${foxname} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows 2 tricks.'"/>
 <h1>Known tricks</h1>
 <ul>
     <li th:text="'write HTML'"/>
