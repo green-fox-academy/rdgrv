@@ -11,7 +11,7 @@ public class MainController {
   @Autowired
   FoxService foxService;
 
-  @RequestMapping("/index")
+  @RequestMapping("/")
   public String mainPage() {
     return "index";
   }
