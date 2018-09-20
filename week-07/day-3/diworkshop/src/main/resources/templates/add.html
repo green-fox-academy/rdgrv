@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>GFA</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body style="background-color:springgreen;">
+<form action="/gfa/save" method="get">
+    <h2>Add new student</h2>
+    <div>
+        <label for="studentname">Name:</label>
+        <input type="text" id="studentname" name="studentname" />
+    </div>
+    <div>
+        <input type="submit" value="Add"/>
+    </div>
+</form>
+</body>
+</html>

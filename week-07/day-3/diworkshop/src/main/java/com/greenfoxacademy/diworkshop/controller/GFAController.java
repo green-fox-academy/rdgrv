@@ -4,7 +4,7 @@ import com.greenfoxacademy.diworkshop.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class GFAController {
@@ -21,5 +21,16 @@ public class GFAController {
   public String gfaList(Model model) {
     model.addAttribute("studentlist", studentService.findAll());
     return "list";
+  }
+
+  @GetMapping("/gfa/add")
+  public String addStudent() {
+    return "add";
+  }
+
+  @GetMapping("/gfa/save")
+  public String saveStudent(@RequestParam(value = "studentname") String name) {
+    studentService.save(name);
+    return "redirect:list";
   }
 }
