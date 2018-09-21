@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fox club</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<form action="/addcustomvalues" method="post">
+    <div>
+        <label for="food">Food:</label>
+        <input type="text" id="food" name="food"/>
+    </div>
+    <div>
+        <label for="drink">Drink:</label>
+        <input type="text" id="drink" name="drink"/>
+    </div>
+    <div>
+        <label for="trick">Trick:</label>
+        <input type="text" id="trick" name="trick"/>
+    </div>
+    <div><input type="submit" value="GO"/></div>
+</form>
+</body>
+</html>

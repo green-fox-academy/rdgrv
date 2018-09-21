@@ -7,12 +7,11 @@
 </head>
 <body>
 <ul>
-    <li><a href="information.html" th:href="@{/index.html}">Information</a></li>
-
+    <li><a th:href="@{'/nutritionstore?name=' + ${fox.getName()}}">Nutrition store</a></li>
 </ul>
 <img src="greenfox.png">
-<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He knows ' + ${fox.countTricks()} + ' tricks.'"/>
-<h1>Known tricks</h1>
+<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. It knows ' + ${fox.countTricks()} + ' trick(s).'"/>
+<h1>Known trick(s)</h1>
 <div>
     <ul>
         <li th:each="trick : ${fox.getKnownTricks()}" >

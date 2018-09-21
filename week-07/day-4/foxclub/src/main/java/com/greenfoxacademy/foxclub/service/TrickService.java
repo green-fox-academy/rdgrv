@@ -12,6 +12,10 @@ public class TrickService {
   @Autowired
   TrickRepository trickRepository;
 
+  public TrickRepository getTrickRepository() {
+    return trickRepository;
+  }
+
   public Trick getTrickByName(String name) {
     return trickRepository.getTrickList().stream()
         .filter(trick -> trick.getName().equals(name))

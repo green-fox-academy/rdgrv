@@ -19,4 +19,8 @@ public class FoxService {
         .collect(Collectors.toList())
         .get(0);
   }
+
+  public void addFox(Fox fox) {
+    foxRepository.getFoxList().add(fox);
+  }
 }
