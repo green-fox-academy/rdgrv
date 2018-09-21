@@ -7,15 +7,18 @@
 </head>
 <body>
 <ul>
-    <li><a href="information.html" th:href="@{/information.html}">Information</a></li>
+    <li><a href="information.html" th:href="@{/index.html}">Information</a></li>
 
 </ul>
 <img src="greenfox.png">
-<p th:text="'This is ' + ${foxname} + '. Currently living on ' + ${food} + ' and ' + ${drink} + '. He knows 2 tricks.'"/>
+<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. He knows ' + ${fox.countTricks()} + ' tricks.'"/>
 <h1>Known tricks</h1>
-<ul>
-    <li th:text="'write HTML'"/>
-    <li th:text="'code in Java'"/>
-</ul>
+<div>
+    <ul>
+        <li th:each="trick : ${fox.getKnownTricks()}" >
+            <p th:text="${trick.getName()}"/>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

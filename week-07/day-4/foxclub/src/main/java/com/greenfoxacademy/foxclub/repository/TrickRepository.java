@@ -13,6 +13,11 @@ public class TrickRepository {
 
   public TrickRepository() {
     trickList = new ArrayList<>();
+    trickList.add(new Trick("Java"));
+    trickList.add(new Trick("JavaScript"));
+    trickList.add(new Trick("HTML5 + CSS"));
+    trickList.add(new Trick("Python"));
+    trickList.add(new Trick("C#"));
   }
 
   public List<Trick> getTrickList() {
