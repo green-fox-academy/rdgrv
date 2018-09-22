@@ -114,4 +114,19 @@ public class MainController {
     foxService.getFoxByName(name).setDrink(drink);
     return "redirect:/?name=" + name;
   }
+
+  @GetMapping("/trickcenter")
+  public String getTrickCenter(@RequestParam(value = "name") String name,
+                               Model model) {
+    model.addAttribute("tricks", trickService.getTrickRepository().getTrickList());
+    model.addAttribute("fox", foxService.getFoxByName(name));
+    return "trickcenter";
+  }
+
+  @PostMapping("/trickcenter")
+  public String postTrickCenter(@RequestParam(value = "name") String name,
+                                @RequestParam(value = "trick") String trick) {
+    foxService.getFoxByName(name).getKnownTricks().add(trickService.getTrickByName(trick));
+    return "redirect:/?name=" + name;
+  }
 }

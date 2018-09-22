@@ -8,7 +8,7 @@
 <body>
 <h1>Nutrition store</h1>
 <p>Please select some food and drink for your pet.</p>
-<form th:action="@{'/nutritionstore?name=' + ${fox.name}}" method="post">
+<form th:action="@{'/nutritionstore?name=' + ${fox.getName()}}" method="post">
     <div>
         <select name="food">
             <option th:each="food : ${foods}" th:text="${food.getName()}"></option>

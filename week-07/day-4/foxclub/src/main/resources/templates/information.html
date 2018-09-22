@@ -8,6 +8,7 @@
 <body>
 <ul>
     <li><a th:href="@{'/nutritionstore?name=' + ${fox.getName()}}">Nutrition store</a></li>
+    <li><a th:href="@{'/trickcenter?name=' + ${fox.getName()}}">Trick center</a></li>
 </ul>
 <img src="greenfox.png">
 <p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. It knows ' + ${fox.countTricks()} + ' trick(s).'"/>
