@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:rh="http://www.w3.org/1999/html">
 <head>
     <title>Fox club</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
-    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
 </head>
 <body>
 <ul>
     <li><a th:href="@{'/nutritionstore?name=' + ${fox.getName()}}">Nutrition store</a></li>
     <li><a th:href="@{'/trickcenter?name=' + ${fox.getName()}}">Trick center</a></li>
 </ul>
-<img src="greenfox.png">
+<div class="foximage">
+    <img src="greenfox.png">
+</div>
 <p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getFood()} + ' and ' + ${fox.getDrink()} + '. It knows ' + ${fox.countTricks()} + ' trick(s).'"/>
 <h1>Known trick(s)</h1>
 <div>
     <ul>
-        <li th:each="trick : ${fox.getKnownTricks()}" >
+        <li th:each="trick : ${fox.getKnownTricks()}">
             <p th:text="${trick.getName()}"/>
         </li>
     </ul>

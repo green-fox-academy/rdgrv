@@ -4,6 +4,7 @@ import com.greenfoxacademy.foxclub.model.Fox;
 import com.greenfoxacademy.foxclub.repository.FoxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
