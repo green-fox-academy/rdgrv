@@ -1,6 +1,7 @@
 package com.greenfoxacademy.rest.controllers;
 
 import com.greenfoxacademy.rest.models.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -48,11 +49,23 @@ public class RestAPIController {
       return new Dountil(sum);
     }
 
-      int fact = 1;
-      for (int i = 1; i <= until.getUntil(); i++) {
-        fact = fact * i;
-      }
+    int fact = 1;
+    for (int i = 1; i <= until.getUntil(); i++) {
+      fact = fact * i;
+    }
 
-      return new Dountil(fact);
+    return new Dountil(fact);
+  }
+
+  @PostMapping("/arrays")
+  public Object arrays(@RequestBody What what) {
+    if (what.getWhat().equals("sum") || what.getWhat().equals("multiply")) {
+      return new WhatSumMultiply(what);
+    }
+    if (what.getWhat().equals("double")) {
+      return new WhatDouble(what);
+    }
+
+    return new RestError("Please provide what to do with the numbers!");
   }
 }
