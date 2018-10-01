@@ -59,13 +59,14 @@ public class RestAPIController {
 
   @PostMapping("/arrays")
   public Object arrays(@RequestBody What what) {
+    if (what.getWhat() == null || what.getNumbers() == null) {
+      return new RestError("Please provide what to do with the numbers!");
+    }
+
     if (what.getWhat().equals("sum") || what.getWhat().equals("multiply")) {
       return new WhatSumMultiply(what);
     }
-    if (what.getWhat().equals("double")) {
-      return new WhatDouble(what);
-    }
 
-    return new RestError("Please provide what to do with the numbers!");
+    return new WhatDouble(what);
   }
 }
