@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reddit</title>
+    <meta charset="utf-8"/>
+</head>
+<body style="text-align: center">
+<h1 th:text="${post.title}"/>
+<a th:href="@{${post.url}}">Click here to visit</a>
+<h2>Comments</h2>
+<table>
+    <tbody>
+    <tr th:each="comment : ${comments}">
+        <td th:text="${comment.likes}"></td>
+        <td>
+            <a th:href="@{'/upvote/comment/' + ${comment.id}}">+</a>
+        </td>
+        <td>
+            <a th:href="@{'/downvote/comment/' + ${comment.id}}">-</a>
+        </td>
+        <td>
+            <a th:href="@{'/post/' + ${comment.id}}" th:text="${comment.title}"/><br>
+        <p th:text="${comment.content}"/></td>
+    </tr>
+    </tbody>
+</table>
+<form th:action="@{'/post/' + ${post.id} + '/comment'}" method="post">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"/>
+    </div>
+    <div>
+        <label for="content">Content:</label>
+        <textarea id="content" name="content"></textarea>
+    </div>
+    <div>
+        <button type="submit">Comment</button>
+    </div>
+</form>
+</body>
+</html>
