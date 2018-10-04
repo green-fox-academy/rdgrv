@@ -1,22 +1,23 @@
 package com.greenfoxacademy.rest.controllers;
 
 import com.greenfoxacademy.rest.models.*;
+import com.greenfoxacademy.rest.services.RestAPIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestAPIController {
 
+  @Autowired
+  RestAPIService restAPIService;
+
   @GetMapping("/doubling")
   public Object doubling(@RequestParam(value = "input", required = false) Integer input) {
     if (input == null) {
-      return new RestError("Please provide an input!");
+      return restAPIService.getNoInputErrorMessage();
     }
 
-    Doubling doubling = new Doubling();
-    doubling.setReceived(input);
-    doubling.setResult(doubling.doubling(input));
-    return doubling;
+    return restAPIService.getDoubling(input);
   }
 
   @GetMapping("/greeter")
