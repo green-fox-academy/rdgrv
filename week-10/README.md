@@ -1,1 +1,1 @@
-[My toCookApp](https://github.com/rdgrv/tocook-app)
+[My toCookApp](https://github.com/rdgrv/tocook)
